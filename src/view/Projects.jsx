@@ -1,25 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-import { lightTheme, darkTheme } from '../styles/theme';
-import Project from './Project'
+import Project from './Project';
+import { Title } from '../styles/global';
 
-const Projects = () => {
+
+const Projects = ({ theme }) => {
 
     return (
         <Box id='projects' >
-            <h1>Projects</h1>
+            <Title>Projects</Title>
             <Collection>
-                <Project></Project>
-                <Project></Project>
-                <Project></Project>
-                <Project></Project>
-                <Project></Project>
-                <Project></Project>
-                <Project></Project>
-                <Project></Project>
-                <Project></Project>
-
+                <Project theme={theme}></Project>
+                <Project theme={theme}></Project>
+                <Project theme={theme}></Project>
+                <Project theme={theme}></Project>
+                <Project theme={theme}></Project>
+                <Project theme={theme}></Project>
+                <Project theme={theme}></Project>
+                <Project theme={theme}></Project>
             </Collection>
 
         </Box>

@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
+import styled from "styled-components";
+
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -25,3 +27,9 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.25s linear;
   }
   `
+
+export const Title = styled.h1`
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 4px 4px 2px #585858;
+`;

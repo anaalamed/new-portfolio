@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import { lightTheme, darkTheme } from '../styles/theme';
@@ -16,7 +16,7 @@ const Main = ({ theme }) => {
 
             <Box theme={theme === 'light' ? lightTheme : darkTheme}>
                 <About ></About>
-                <Projects ></Projects>
+                <Projects theme={theme} ></Projects>
             </Box>
         </>
 
@@ -28,6 +28,7 @@ export default Main;
 
 const Box = styled.main`
   background: ${props => props.theme.about};
+  padding: 2.5rem 5rem;
 
 `;
 

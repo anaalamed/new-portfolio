@@ -1,40 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from '../styles/global';
 import { lightTheme, darkTheme } from '../styles/theme';
+import Toggle from './Toogle'
 
 const TopBar = ({ theme, setTheme }) => {
 
-    const toggleTheme = () => {
-        if (theme === 'light') {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
-    }
-
-    return (
-        <Header theme={theme === 'light' ? lightTheme : darkTheme}>
-            <Logo src="coderz.jpg"></Logo>
-            <div>
-                <Link href='#about'>About</Link>
-                <Link href='#projects'>Projects</Link>
-                <Link href='#contact'>Contact</Link>
-                <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-                    {console.log(theme)}
-                    <>
-                        <GlobalStyles />
-                        <button onClick={toggleTheme}>Toggle theme</button>
-                        <footer>
-                        </footer>
-                    </>
-                </ThemeProvider>
-            </div>
-        </Header>
-    );
+  return (
+    <Header theme={theme === 'light' ? lightTheme : darkTheme}>
+      <Logo src="coderz.jpg"></Logo>
+      <div>
+        <Link offset='180' href='#about'>About</Link>
+        <Link offset='180' href='#projects'>Projects</Link>
+        <Link href='#contact'>Contact</Link>
+        <Toggle setTheme={setTheme}></Toggle>
+      </div>
+    </Header>
+  );
 };
 export default TopBar;
 
@@ -62,7 +45,7 @@ const Logo = styled.img`
 
 const Link = styled(AnchorLink)`
   cursor: pointer;
-  padding: 1rem;
+  margin-right: 2rem;
   color: white;
   text-decoration: none;
   font-size: 1.8rem;
