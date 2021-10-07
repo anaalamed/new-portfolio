@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styled from 'styled-components';
+
+import TopBar from './view/TopBar'
+import Main from './view/Main'
+import Contact from './view/Contact';
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <TopBar theme={theme} setTheme={setTheme}></TopBar>
+      <Main theme={theme}></Main>
+      <Contact theme={theme}></Contact>
+    </Box>
   );
 }
 
 export default App;
+
+const Box = styled.div`
+  height: 100%;
+`;
