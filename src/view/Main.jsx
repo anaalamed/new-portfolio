@@ -5,14 +5,14 @@ import { lightTheme, darkTheme } from '../styles/theme';
 
 import About from './About';
 import Projects from './Projects';
-import Title from './Title';
+import Front from './Front';
 
 
 const Main = ({ theme }) => {
 
     return (
         <>
-            <Title></Title>
+            <Front></Front>
 
             <Box theme={theme === 'light' ? lightTheme : darkTheme}>
                 <About ></About>

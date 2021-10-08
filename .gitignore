@@ -2,6 +2,11 @@
 .vscode
 .DS_Store
 
+.firebase 
+.firebaserc
+firebase-debug.log
+.github
+
 # dependencies
 /node_modules
 /.pnp
