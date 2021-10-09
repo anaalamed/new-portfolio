@@ -9,10 +9,10 @@ const TopBar = ({ theme, setTheme }) => {
 
   return (
     <Header theme={theme === 'light' ? lightTheme : darkTheme}>
-      <Logo src="coderz.jpg"></Logo>
+      <Logo src="logo.png"></Logo>
       <div>
-        <Link offset='180' href='#about'>About</Link>
-        <Link offset='180' href='#projects'>Projects</Link>
+        <Link offset='140' href='#about'>About</Link>
+        <Link offset='140' href='#projects'>Projects</Link>
         <Link href='#contact'>Contact</Link>
         <Toggle setTheme={setTheme}></Toggle>
       </div>
@@ -33,7 +33,7 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   z-index: 100;
-  padding: 2rem;
+  padding: 0.4rem 2rem;
 `;
 
 const Logo = styled.img`

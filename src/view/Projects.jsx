@@ -5,20 +5,15 @@ import Project from './Project';
 import { Title } from '../styles/global';
 
 
-const Projects = ({ theme }) => {
+const Projects = ({ theme, repos }) => {
 
     return (
         <Box id='projects' >
             <Title>Projects</Title>
             <Collection>
-                <Project theme={theme}></Project>
-                <Project theme={theme}></Project>
-                <Project theme={theme}></Project>
-                <Project theme={theme}></Project>
-                <Project theme={theme}></Project>
-                <Project theme={theme}></Project>
-                <Project theme={theme}></Project>
-                <Project theme={theme}></Project>
+                {repos?.map(repo =>
+                    (<Project theme={theme} repo={repo}></Project>)
+                )}
             </Collection>
 
         </Box>
@@ -28,7 +23,7 @@ export default Projects;
 
 
 const Box = styled.section`
-margin-bottom: 5rem;
+  margin-bottom: 5rem;
 
 
 `;

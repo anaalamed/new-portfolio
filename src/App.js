@@ -1,5 +1,4 @@
 import React from "react";
-import styled from 'styled-components';
 import { ThemeProvider } from "styled-components";
 
 import { lightTheme, darkTheme } from './styles/theme';
@@ -8,8 +7,7 @@ import { GlobalStyles } from "./styles/global";
 import TopBar from './view/TopBar'
 import Main from './view/Main'
 import Contact from './view/Contact';
-
-
+import Front from './view/Front';
 
 
 
@@ -18,11 +16,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <Box>
           <TopBar theme={theme} setTheme={toggleTheme}></TopBar>
+          <Front theme={theme}></Front>
           <Main theme={theme}></Main>
           <Contact theme={theme}></Contact>
-      </Box>
 
       <GlobalStyles></GlobalStyles>
     </ThemeProvider>
@@ -31,6 +28,3 @@ function App() {
 
 export default App;
 
-const Box = styled.div`
-  height: 100%;
-`;

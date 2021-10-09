@@ -1,16 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import { GrGithub } from 'react-icons/gr';
+import { CgWebsite } from 'react-icons/cg';
+
+
 
 import { lightTheme, darkTheme } from '../styles/theme';
 
-const Project = ({ theme }) => {
+const Project = ({ theme, repo }) => {
+  console.log(repo);
 
   return (
     <Box theme={theme === 'light' ? lightTheme : darkTheme} >
-      <h1>Project</h1>
-      <Image><img src='coderz.jpg' alt='' /></Image>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </p>
-      <Button theme={theme === 'light' ? lightTheme : darkTheme}>View here</Button>
+      <h1>{repo.name}</h1>
+      <Image><img src={repo.owner.avatar_url} alt='' /></Image>
+
+      <p>{repo.description}</p>
+      <Buttons>
+        <Button theme={theme === 'light' ? lightTheme : darkTheme}><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button>
+        {(repo.homepage) ? (
+          <Button theme={theme === 'light' ? lightTheme : darkTheme}><a href={repo.homepage} target="_blank" rel="noreferrer"><CgWebsite /></a></Button>
+        ) : null}
+
+      </Buttons>
 
     </Box>
   );
@@ -20,10 +32,11 @@ export default Project;
 
 const Box = styled.div`
   background: ${props => props.theme.topBar};
-  width: 15rem;
-  margin: 1rem;
+  width: 18rem;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
   border-radius: 1rem;
@@ -38,16 +51,26 @@ const Image = styled.div`
   
   img {
       border-radius: 50%;
-      width: 8rem;
-      height: 6rem;
+      width: 9rem;
+      height: rem;
 
   }
 `;
 
+const Buttons = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  /* align-self: flex-end; */
+`;
+
 const Button = styled.button`
   background: ${props => props.theme.button};
-  width: 100%;
-  color: white;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
+
+  a {
+    color: white;
+    font-size: 1.5rem;
+  }
 `;

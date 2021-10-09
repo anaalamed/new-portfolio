@@ -1,13 +1,13 @@
 export const lightTheme = {
-    body: '#007a99',
     topBar:  '#003d4d',
-    about: ' #ff9999',
+    front: '#007a99',
+    body: '#ff9999',
     button: '#ff6666'
   }
   
   export const darkTheme = {
-    body: '#000033',
     topBar:  ' #00001a',
-    about: '#600080',
+    body: '#600080',
+    front: '#000033',
     button: '#39004d'
   }

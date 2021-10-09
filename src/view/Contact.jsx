@@ -6,18 +6,19 @@ import { Title } from '../styles/global';
 
 import { GrLinkedinOption, GrGithub } from 'react-icons/gr';
 import { IoDocumentAttachOutline } from 'react-icons/io5';
+import Pdf from '../documents/cv.pdf';
 
 
 const Contact = ({ theme }) => {
 
     return (
         <Box id="contact" theme={theme === 'light' ? lightTheme : darkTheme}>
-            <Title>CoderZ Workout</Title>
-            <p>coderz.workout@example.com</p>
+            <Title>Ana Levit</Title>
+            <p>anaalamed@gmail.com</p>
             <Icons>
-                <h2><IoDocumentAttachOutline /></h2>
-                <h2><GrGithub /></h2>
-                <h2><GrLinkedinOption /></h2>
+                <h2><a href={Pdf} target="_blank" rel="noreferrer"><IoDocumentAttachOutline /></a></h2>
+                <h2><a href="https://github.com/anaalamed" target="_blank" rel="noreferrer"><GrGithub /></a></h2>
+                <h2><a href="https://www.linkedin.com/in/ana-levit-2934a0150" target="_blank" rel="noreferrer"><GrLinkedinOption /></a></h2>
             </Icons>
         </Box>
     );
@@ -45,6 +46,10 @@ const Icons = styled.div`
     h2 {
         margin: 1rem;
         cursor: pointer;
+
+        a{
+        color: white;
+        }
     }
 
 `;
