@@ -35,7 +35,7 @@ export default Main;
 const Box = styled.main`
   width: 100%;
   background: ${props => props.theme.about};
-  padding: 1rem 4rem;
+  padding: 1rem 6rem;
 `;
 
 

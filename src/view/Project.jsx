@@ -32,8 +32,8 @@ export default Project;
 
 const Box = styled.div`
   background: ${props => props.theme.topBar};
-  width: 18rem;
-  margin: 1rem 0;
+  width: 20rem;
+  margin: 1rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,8 +51,7 @@ const Image = styled.div`
   
   img {
       border-radius: 50%;
-      width: 9rem;
-      height: rem;
+      width: 11rem;
 
   }
 `;
