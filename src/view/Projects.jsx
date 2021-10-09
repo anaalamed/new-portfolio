@@ -12,6 +12,16 @@ const Projects = ({ theme, repos }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(6);
 
+    // sort according to last update
+    if (repos.length !== 0) {
+        repos.sort(function (a, b) {
+            var c = new Date(a.updated_at);
+            var d = new Date(b.updated_at);
+            return d - c;
+        });
+    }
+
+    // slice for pages
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentRepos = repos.slice(indexOfFirstPost, indexOfLastPost);

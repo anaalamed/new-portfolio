@@ -8,7 +8,6 @@ import { CgWebsite } from 'react-icons/cg';
 import { lightTheme, darkTheme } from '../styles/theme';
 
 const Project = ({ theme, repo }) => {
-  console.log(repo);
 
   return (
     <Box theme={theme === 'light' ? lightTheme : darkTheme} >
@@ -16,6 +15,7 @@ const Project = ({ theme, repo }) => {
       <Image><img src={repo.owner.avatar_url} alt='' /></Image>
 
       <p>{repo.description}</p>
+      <p>last updated: {repo.updated_at.substring(0, 10)}</p>
       <Buttons>
         <Button theme={theme === 'light' ? lightTheme : darkTheme}><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button>
         {(repo.homepage) ? (
