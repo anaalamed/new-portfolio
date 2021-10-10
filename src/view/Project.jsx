@@ -45,6 +45,10 @@ const Box = styled.div`
     text-align: center;
   }
 
+  @media only screen and (max-width: 812px) {
+    width: 15rem;
+  }
+
 `;
 
 const Image = styled.div`

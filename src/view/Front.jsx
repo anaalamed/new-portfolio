@@ -10,7 +10,7 @@ import { IoDocumentAttachOutline } from 'react-icons/io5';
 const Front = ({ theme }) => {
 
   return (
-    <Box>
+    <Box id="front">
       <Details>
         <Title>Ana Levit</Title>
         <p>Junior Front End Developer</p>
@@ -38,14 +38,26 @@ const Box = styled.section`
   display: flex;
   justify-content: space-between;
   padding: 3rem;
+
+  @media only screen and (max-width: 1200px) {
+      padding: 1rem 0 ;
+      flex-direction: column;
+      align-items: center;
+    }
 `;
 
 const Image = styled.div`
+
   img {
     width: 60rem;
+
+    @media only screen and (max-width: 1200px) {
+      width: 45rem;
+    }
       
     @media only screen and (max-width: 812px) {
-      width: 30rem;
+      width: 25rem;
+      padding: 0;
     }
   }
 
@@ -61,9 +73,15 @@ const Details = styled.div`
     margin: 1.5rem;
   }
 
+  @media only screen and (max-width: 1200px) {
+    left: 18rem;
+    top: 15rem;
+    font-size: 1.5rem;
+  }
+
   @media only screen and (max-width: 812px) {
-    left: 7rem;
-    top: 13rem;
+    left: 5rem;
+    top: 10rem;
     font-size: 1.5rem;
   }
 `;
@@ -73,9 +91,14 @@ const Title = styled.h1`
   text-shadow: 4px 4px 2px #585858;
   text-align: left;
 
+  @media only screen and (max-width: 1200px) {
+    font-size: 5rem;
+  }
+
   @media only screen and (max-width: 812px) {
     font-size: 3rem;
   }
+
 `;
 
 const Button = styled.button`
@@ -85,6 +108,11 @@ const Button = styled.button`
   border-radius: 1rem;
   margin: 0 1rem;
   font-size: 1.2rem;
+
+  @media only screen and (max-width: 812px) {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 `;
 
 const Icons = styled.div`
@@ -99,6 +127,14 @@ const Icons = styled.div`
 
         a {
           color: white;
+        }
+        
+        @media only screen and (max-width: 1200px) {
+          font-size: 2.5rem;
+        }
+
+        @media only screen and (max-width: 812px) {
+          font-size: 1.8rem;
         }
 
     }

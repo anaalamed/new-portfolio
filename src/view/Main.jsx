@@ -36,6 +36,10 @@ const Box = styled.main`
   width: 100%;
   background: ${props => props.theme.about};
   padding: 1rem 6rem;
+
+  @media only screen and (max-width: 812px) {
+    padding: 1rem ;
+  }
 `;
 
 

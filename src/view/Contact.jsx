@@ -29,13 +29,11 @@ export default Contact;
 const Box = styled.footer`
   background: ${props => props.theme.topBar};
   text-align: center;
-  padding: 5rem;
+  padding: 2rem 0 0 0;
   
   h1 {
       margin: auto 0;
-      
   }
-
 `;
 
 const Icons = styled.div`

@@ -9,8 +9,8 @@ const About = ({ avatar }) => {
     <Box id='about' >
       <Title>About</Title>
       <Content>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         <Image><img src={avatar} alt='' /></Image>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </Content>
 
     </Box>
@@ -27,19 +27,34 @@ const Box = styled.section`
 
 const Content = styled.div`
   display: flex;
+  flex-direction: row-reverse;
 
   p {
     font-size: 1.5rem;
   }
+
+  @media only screen and (max-width: 812px) {
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        font-size: 1rem;
+      }
+    }
 `;
 
 const Image = styled.div`
   margin-left: 1rem;
-
+  
   img {
       border-radius: 50%;
       width: 20rem;
       height: 20rem;
+
+      @media only screen and (max-width: 812px) {
+        width: 15rem;
+        height: 15rem;
+      }
   }
 `;
 
