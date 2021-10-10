@@ -75,10 +75,6 @@ export default function App() {
 
     const callbacks = {
         getWordColor: (word) => (word.value > 50 ? "blue" : "red"),
-        onWordClick: console.log,
-        onWordMouseOver: console.log,
-        getWordTooltip: (word) =>
-            `${word.text} (${word.value}) [${word.value > 50 ? "good" : "bad"}]`
     };
     const options = {
         rotations: 1,
@@ -89,8 +85,8 @@ export default function App() {
     return (
         <Box>
             <ReactWordcloud
-                // callbacks={callbacks}
-                // options={options}
+                callbacks={callbacks}
+                options={options}
                 size={size}
                 words={words}
             />

@@ -80,9 +80,13 @@ const Details = styled.div`
   }
 
   @media only screen and (max-width: 812px) {
-    left: 5rem;
+    left: 10rem;
     top: 10rem;
     font-size: 1.5rem;
+  }
+
+  @media only screen and (max-width: 650px) {
+    left: 5rem;
   }
 `;
 
