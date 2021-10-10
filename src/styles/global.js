@@ -28,6 +28,10 @@ export const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  .toggle {
+    margin-top: 0.4rem;
+  }
   `
 
 export const Title = styled.h1`

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Title } from '../styles/global';
+import WordCloud from './WordCloud'
 
 const About = ({ avatar }) => {
 
@@ -10,9 +11,29 @@ const About = ({ avatar }) => {
       <Title>About</Title>
       <Content>
         <Image><img src={avatar} alt='' /></Image>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>I have completed my bachelor's degree in Electrical and Electronics Engineering, but my passion is coding! <br></br>
+        I'm a graduated student of Full Stack Development course searching for my first opportunity as a developer. <br></br>
+        I’m coding for at least 3 hours every day. <br></br>
+        I come with a hands-on approach. <br></br>
+        I’m a quick learner. <br></br><br></br>
+        I have knowledge in: <br></br>
+          <img src="https://img.shields.io/badge/HTML5-282C34?logo=html5&logoColor=E34F26" alt="HTML5 logo" title="HTML5" height="30" /> &nbsp;
+          <img src="https://img.shields.io/badge/CSS3-282C34?logo=css3&logoColor=1572B6" alt="CSS3 logo" title="CSS3" height="30" /> &nbsp;
+          <img src="https://img.shields.io/badge/Sass-282C34?logo=sass&logoColor=CC6699" alt="Sass logo" title="Sass" height="30" /> &nbsp;
+          <img src="https://img.shields.io/badge/JavaScript-282C34?logo=javascript&logoColor=F7DF1E" alt="JavaScript logo" title="JavaScript" height="30" /> &nbsp;
+          <img src="https://img.shields.io/badge/-React-%23282C34?logo=react&logoColor=61DAFB%22%20alt=%22React%20Native%20logo" alt="React logo" title="React" height="30" />&nbsp;
+          <img src="https://img.shields.io/badge/Redux-282C34?logo=redux&logoColor=764ABC" alt="Redux logo" title="Redux" height="30" />&nbsp;
+          <img src="https://img.shields.io/static/v1?label=&message=styled-components&color=282C34&logo=styled-components&logoColor=DB7093" alt="styled-components logo" title="styled-components" height="30" />&nbsp;<br></br>
+          <img src="https://img.shields.io/badge/Node.js-282C34?logo=node.js&logoColor=339933" alt="Node.js logo" title="Node.js" height="30" /> &nbsp;
+          <img src="https://img.shields.io/badge/Express-282C34?logo=express&logoColor=FFFFFF" alt="Express.js logo" title="Express.js" height="30" /> &nbsp;
+          <img src="https://img.shields.io/badge/TypeScript-282C34?logo=typescript&logoColor=3178C6" alt="TypeScript logo" title="TypeScript" height="30" /> &nbsp;
+          <img src="https://img.shields.io/badge/MongoDB-282C34?logo=mongodb&logoColor=47A248" alt="MongoDB logo" title="MongoDB" height="30" />&nbsp;
+          <img src="https://img.shields.io/badge/git-282C34?logo=git&logoColor=F05032" alt="git logo" title="git" height="30" />&nbsp;
+          <img src="https://img.shields.io/badge/Firebase-282C34?logo=firebase&logoColor=FFCA28" alt="Firebase logo" title="Firebase" height="30" /> &nbsp;
+        </p>
       </Content>
 
+      {/* <WordCloud></WordCloud> */}
     </Box>
   );
 };
@@ -28,9 +49,11 @@ const Box = styled.section`
 const Content = styled.div`
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-around;
 
   p {
     font-size: 1.5rem;
+    text-align: left;
   }
 
   @media only screen and (max-width: 812px) {

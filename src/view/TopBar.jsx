@@ -6,7 +6,6 @@ import { lightTheme, darkTheme } from '../styles/theme';
 import Toggle from './Toogle';
 import VerticalNav from './VerticalNav';
 
-
 const TopBar = ({ theme, setTheme }) => {
   const [open, setOpen] = useState(false);
 
@@ -18,11 +17,11 @@ const TopBar = ({ theme, setTheme }) => {
         <li><Link offset='140' href='#about'>About</Link></li>
         <li><Link offset='140' href='#projects'>Projects</Link></li>
         <li><Link href='#contact'>Contact</Link></li>
-        <li><Toggle setTheme={setTheme}></Toggle></li>
+        <li className='toggle'><Toggle setTheme={setTheme}></Toggle></li>
       </Nav>
 
       <VerticalNav open={open} setOpen={setOpen} theme={theme} setTheme={setTheme}></VerticalNav>
-    </Header>
+    </Header >
   );
 };
 export default TopBar;

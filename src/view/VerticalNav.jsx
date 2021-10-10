@@ -49,7 +49,7 @@ const NavVertical = styled.ul`
   background: ${props => props.theme.topBar};
   list-style: none;
   position: absolute;
-  top: 6.7rem;
+  top: 6.5rem;
   right: 0;
   border: 1px solid black;
 
