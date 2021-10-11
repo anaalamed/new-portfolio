@@ -11,14 +11,16 @@ const Front = ({ theme }) => {
 
   return (
     <Box id="front">
-      <Details>
-        <Title>Ana Levit</Title>
-        <p>Junior Front End Developer</p>
-        <AnchorLink offset='140' href='#about'>
-          <Button theme={theme === 'light' ? lightTheme : darkTheme}>About me</Button>
-        </AnchorLink>
-      </Details>
-      <Image><img src='2.svg' alt='' /></Image>
+      <Skica>
+        <Details>
+          <Title>Ana Levit</Title>
+          <p>Junior Front End Developer</p>
+          <AnchorLink offset='140' href='#about'>
+            <Button theme={theme === 'light' ? lightTheme : darkTheme}>About me</Button>
+          </AnchorLink>
+        </Details>
+        <Image><img src='2.svg' alt='' /></Image>
+      </Skica>
 
       <Icons>
         <h2><a href={Pdf} target="_blank" rel="noreferrer"><IoDocumentAttachOutline /></a></h2>
@@ -34,25 +36,41 @@ export default Front;
 
 const Box = styled.section`
   background: ${props => props.theme.front};
-  margin-top: 6.5rem;
+  /* margin-top: 4rem; */
   display: flex;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 0 3rem ;
 
   @media only screen and (max-width: 1200px) {
       padding: 1rem 0 ;
+      margin-top: 6rem;
       flex-direction: column;
       align-items: center;
     }
 `;
 
+const Skica = styled.div`
+  height: 60rem;
+
+  @media only screen and (max-width: 1200px) {
+    height: 40rem;
+  }
+
+  @media only screen and (max-width: 812px) {
+    height: 20rem;
+  }
+
+`;
+
 const Image = styled.div`
+position: relative;
+top: -12rem;
 
   img {
     width: 60rem;
 
     @media only screen and (max-width: 1200px) {
-      width: 45rem;
+      width: 50rem;
     }
       
     @media only screen and (max-width: 812px) {
@@ -64,30 +82,39 @@ const Image = styled.div`
 `;
 
 const Details = styled.div`
-  position: absolute;
-  left: 10rem;
-  top: 20rem;
-  font-size: 4rem;
+  /* background-image: url(../assets/images/2.svg); */
+  position: relative;
+  background-repeat:repeat-y;
+  left: 9rem;
+  top: 15rem;
+  font-size: 3rem;
+  z-index: 10;
 
   h1, p {
     margin: 1.5rem;
   }
 
   @media only screen and (max-width: 1200px) {
-    left: 18rem;
-    top: 15rem;
+    left: 9rem;
+    top: 11rem;
     font-size: 1.5rem;
   }
 
   @media only screen and (max-width: 812px) {
-    left: 10rem;
-    top: 10rem;
+    left: 3rem;
+    top: 3rem;
     font-size: 1.5rem;
-  }
+    width: max-content;
+    margin-right: 0;
 
-  @media only screen and (max-width: 650px) {
-    left: 5rem;
+
   }
+  
+
+  /* @media only screen and (max-width: 650px) {
+    top: 5rem;
+    left: 2rem;
+  } */
 `;
 
 const Title = styled.h1`
@@ -102,7 +129,6 @@ const Title = styled.h1`
   @media only screen and (max-width: 812px) {
     font-size: 3rem;
   }
-
 `;
 
 const Button = styled.button`
