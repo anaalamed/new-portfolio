@@ -7,7 +7,7 @@ import { GlobalStyles } from "./styles/global";
 import TopBar from './view/TopBar'
 import Main from './view/Main'
 import Contact from './view/Contact';
-import Front from './view/Front';
+import Hero from './view/Hero';
 
 
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
           <TopBar theme={theme} setTheme={toggleTheme}></TopBar>
-          <Front theme={theme}></Front>
+          <Hero theme={theme}></Hero>
           <Main theme={theme}></Main>
           <Contact theme={theme}></Contact>
 

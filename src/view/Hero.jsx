@@ -3,11 +3,9 @@ import styled from "styled-components";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import { lightTheme, darkTheme } from '../styles/theme';
-import Pdf from '../documents/cv.pdf';
-import { GrLinkedinOption, GrGithub } from 'react-icons/gr';
-import { IoDocumentAttachOutline } from 'react-icons/io5';
+import Icons from './Icons';
 
-const Front = ({ theme }) => {
+const Hero = ({ theme }) => {
 
   return (
     <Box id="front">
@@ -22,21 +20,15 @@ const Front = ({ theme }) => {
         <Image><img src='2.svg' alt='' /></Image>
       </Skica>
 
-      <Icons>
-        <h2><a href={Pdf} target="_blank" rel="noreferrer"><IoDocumentAttachOutline /></a></h2>
-        <h2><a href="https://github.com/anaalamed" target="_blank" rel="noreferrer"><GrGithub /></a></h2>
-        <h2><a href="https://www.linkedin.com/in/ana-levit-2934a0150" target="_blank" rel="noreferrer"><GrLinkedinOption /></a></h2>
-      </Icons>
-
+      <Icons></Icons>
     </Box>
   );
 };
-export default Front;
+export default Hero;
 
 
 const Box = styled.section`
   background: ${props => props.theme.front};
-  /* margin-top: 4rem; */
   display: flex;
   justify-content: space-between;
   padding: 0 3rem ;
@@ -59,7 +51,6 @@ const Skica = styled.div`
   @media only screen and (max-width: 812px) {
     height: 20rem;
   }
-
 `;
 
 const Image = styled.div`
@@ -78,11 +69,9 @@ top: -12rem;
       padding: 0;
     }
   }
-
 `;
 
 const Details = styled.div`
-  /* background-image: url(../assets/images/2.svg); */
   position: relative;
   background-repeat:repeat-y;
   left: 9rem;
@@ -106,15 +95,7 @@ const Details = styled.div`
     font-size: 1.5rem;
     width: max-content;
     margin-right: 0;
-
-
   }
-  
-
-  /* @media only screen and (max-width: 650px) {
-    top: 5rem;
-    left: 2rem;
-  } */
 `;
 
 const Title = styled.h1`
@@ -145,30 +126,6 @@ const Button = styled.button`
   }
 `;
 
-const Icons = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    h2 {
-        margin: 1rem;
-        font-size: 4rem;
-        cursor: pointer;
-
-        a {
-          color: white;
-        }
-        
-        @media only screen and (max-width: 1200px) {
-          font-size: 2.5rem;
-        }
-
-        @media only screen and (max-width: 812px) {
-          font-size: 1.8rem;
-        }
-
-    }
-`;
 
 
 

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Pagination } from 'antd';
 import 'antd/dist/antd.css';
 
-
 import Project from './Project';
 import { Title } from '../styles/global';
 
@@ -12,12 +11,12 @@ const Projects = ({ theme, repos }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(6);
 
-    // sort according to last update
+    // sort projects
     if (repos.length !== 0) {
         repos.sort(function (a, b) {
-            var c = new Date(a.updated_at);
-            var d = new Date(b.updated_at);
-            return d - c;
+            var pr1 = a.order || 100;
+            var pr2 = b.order || 100;
+            return pr1 - pr2;
         });
     }
 
@@ -32,14 +31,11 @@ const Projects = ({ theme, repos }) => {
         <Box id='projects' >
             <Title>Projects</Title>
             <Collection>
-
-                {/* {repos?.map(repo => */}
                 {currentRepos?.map(repo =>
-                    (<Project theme={theme} repo={repo}></Project>)
+                    (<Project theme={theme} repo={repo} key={repo.id} ></Project>)
                 )}
             </Collection>
             <Pagination current={currentPage} onChange={handleChangePage} total={30} />
-
         </Box>
     );
 };
@@ -51,8 +47,6 @@ const Box = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
 `;
 
 const Collection = styled.div`
