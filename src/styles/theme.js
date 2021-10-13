@@ -6,7 +6,7 @@ export const lightTheme = {
   }
   
   export const darkTheme = {
-    topBar:  ' #00001a',
+    topBar:  '#00001a',
     hero: '#000033',
     body: '#600080',
     button: '#39004d'

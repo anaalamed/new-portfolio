@@ -71,7 +71,12 @@ const Link = styled(AnchorLink)`
   margin-right: 2rem;
   color: white;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+
+  :hover {
+    color: ${props => props.theme.body}
+  }
 
   @media only screen and (max-width: 812px) {
     font-size: 1.3rem;

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Pagination } from 'antd';
 import 'antd/dist/antd.css';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import Project from './Project';
 import { Title } from '../styles/global';
-
 
 const Projects = ({ repos }) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -35,7 +35,10 @@ const Projects = ({ repos }) => {
                     (<Project repo={repo} key={repo.id} ></Project>)
                 )}
             </Collection>
-            <Pagination current={currentPage} onChange={handleChangePage} total={30} />
+
+            <AnchorLink href='#projects' offset='140'>
+                <Pagination current={currentPage} onChange={handleChangePage} total={30} />
+            </AnchorLink>
         </Box>
     );
 };
@@ -43,7 +46,7 @@ export default Projects;
 
 
 const Box = styled.section`
-  margin-bottom: 5rem;
+  /* margin-bottom: 3rem; */
   display: flex;
   flex-direction: column;
   align-items: center;

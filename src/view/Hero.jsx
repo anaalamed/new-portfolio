@@ -77,6 +77,7 @@ const Details = styled.div`
   top: 15rem;
   font-size: 3rem;
   z-index: 10;
+  width: max-content;
 
   h1, p {
     margin: 1.5rem;
@@ -118,6 +119,7 @@ const Button = styled.button`
   border-radius: 1rem;
   margin: 0 1rem;
   font-size: 1.2rem;
+  cursor: pointer;
 
   @media only screen and (max-width: 812px) {
     font-size: 1rem;

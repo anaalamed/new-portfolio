@@ -42,7 +42,7 @@ const Box = styled.div`
   }
 
   @media only screen and (max-width: 812px) {
-    width: 15rem;
+    width: 16rem;
   }
 `;
 
@@ -50,9 +50,10 @@ const Image = styled.div`
   
   img {
       border-radius: 10rem;
-      width: 13rem;
+      width: 14rem;
       /* height: 9rem; */
       object-fit: contain;
+      margin-bottom: 0.5rem;
   }
 `;
 
@@ -64,16 +65,22 @@ const Buttons = styled.div`
 
 const Button = styled.button`
   background: ${props => props.theme.button};
-  padding: 0.5rem 3rem;
+  padding: 0.2rem 3rem 0 3rem;
   border-radius: 1rem;
 
   a {
     color: white;
     font-size: 1.5rem;
+    vertical-align: middle;
   }
 
   @media only screen and (max-width: 812px) {
-    padding: 0.5rem 2rem;
+    padding: 0.2rem 2rem 0 2rem;
+
+    a {
+    font-size: 1rem;
+    }
+    
 
   }
 `;

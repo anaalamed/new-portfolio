@@ -3,13 +3,12 @@ import { ThemeProvider } from "styled-components";
 
 import { lightTheme, darkTheme } from './styles/theme';
 import { useDarkMode } from './hooks/useDarkMode';
-import { GlobalStyles } from "./styles/global";
 import TopBar from './view/TopBar'
 import Main from './view/Main'
 import Contact from './view/Contact';
 import Hero from './view/Hero';
 
-
+import { GlobalStyles } from "./styles/global";
 
 function App() {
   const [theme, toggleTheme] = useDarkMode();

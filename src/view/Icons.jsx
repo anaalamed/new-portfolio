@@ -15,7 +15,7 @@ const Icons = () => {
       <h2><a href="https://www.linkedin.com/in/ana-levit-2934a0150" target="_blank" rel="noreferrer" ><GrLinkedinOption data-tip data-for="linkedin" /></a></h2>
 
       {tooltips.map(tooltip =>
-        (<ReactTooltip id={tooltip.name} place="top" effect="solid">{tooltip.note}</ReactTooltip>)
+        (<ReactTooltip id={tooltip.name} place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>{tooltip.note}</ReactTooltip>)
       )}
     </Box >
   );
