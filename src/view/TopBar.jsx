@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import { lightTheme, darkTheme } from '../styles/theme';
 import Toggle from './Toogle';
 import VerticalNav from './VerticalNav';
 
-const TopBar = ({ theme, setTheme }) => {
+const TopBar = ({ setTheme }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Header theme={theme === 'light' ? lightTheme : darkTheme}>
+    <Header >
       <Link offset='140' href='#front'><Logo src="logo.png"></Logo></Link>
 
       <Nav>
@@ -20,7 +19,7 @@ const TopBar = ({ theme, setTheme }) => {
         <li className='toggle'><Toggle setTheme={setTheme}></Toggle></li>
       </Nav>
 
-      <VerticalNav open={open} setOpen={setOpen} theme={theme} setTheme={setTheme}></VerticalNav>
+      <VerticalNav open={open} setOpen={setOpen} setTheme={setTheme}></VerticalNav>
     </Header >
   );
 };

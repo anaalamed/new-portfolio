@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import { lightTheme, darkTheme } from '../styles/theme';
 import Icons from './Icons';
 
-const Hero = ({ theme }) => {
+const Hero = () => {
 
   return (
     <Box id="front">
@@ -14,7 +13,7 @@ const Hero = ({ theme }) => {
           <Title>Ana Levit</Title>
           <p>Junior Front End Developer</p>
           <AnchorLink offset='140' href='#about'>
-            <Button theme={theme === 'light' ? lightTheme : darkTheme}>About me</Button>
+            <Button >About me</Button>
           </AnchorLink>
         </Details>
         <Image><img src='2.svg' alt='' /></Image>
@@ -28,7 +27,7 @@ export default Hero;
 
 
 const Box = styled.section`
-  background: ${props => props.theme.front};
+  background: ${props => props.theme.hero};
   display: flex;
   justify-content: space-between;
   padding: 0 3rem ;

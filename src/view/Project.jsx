@@ -4,21 +4,19 @@ import dayjs from 'dayjs';
 import { GrGithub } from 'react-icons/gr';
 import { CgWebsite } from 'react-icons/cg';
 
-import { lightTheme, darkTheme } from '../styles/theme';
-
-const Project = ({ theme, repo }) => {
+const Project = ({ repo }) => {
 
   return (
-    <Box theme={theme === 'light' ? lightTheme : darkTheme} >
+    <Box >
       <h1>{repo.name}</h1>
       <Image><img src={repo.image_url || "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=38d06bf9-e833-4c42-b4bf-f9cf0558c274"} alt='' /></Image>
 
       <p>{repo.description}</p>
       <p>last updated: {dayjs(repo.updated_at).format('DD-MM-YY')}</p>
       <Buttons>
-        <Button theme={theme === 'light' ? lightTheme : darkTheme}><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button>
+        <Button ><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button>
         {(repo.homepage) ? (
-          <Button theme={theme === 'light' ? lightTheme : darkTheme}><a href={repo.homepage} target="_blank" rel="noreferrer"><CgWebsite /></a></Button>
+          <Button ><a href={repo.homepage} target="_blank" rel="noreferrer"><CgWebsite /></a></Button>
         ) : null}
 
       </Buttons>

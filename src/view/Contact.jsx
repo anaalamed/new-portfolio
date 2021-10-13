@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import { lightTheme, darkTheme } from '../styles/theme';
 import { Title } from '../styles/global';
 import Icons from './Icons';
 
-const Contact = ({ theme }) => {
+const Contact = () => {
 
     return (
-        <Box id="contact" theme={theme === 'light' ? lightTheme : darkTheme}>
+        <Box id="contact">
             <Title>Ana Levit</Title>
             <p>anaalamed@gmail.com</p>
             <Icons></Icons>

@@ -3,15 +3,14 @@ import styled from "styled-components";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { IoMdMenu } from "react-icons/io";
 
-import { lightTheme, darkTheme } from '../styles/theme';
 import Toggle from './Toogle';
 
-const VerticalNav = ({ theme, setTheme, open, setOpen }) => {
+const VerticalNav = ({ setTheme, open, setOpen }) => {
 
   return (
     <RightNav display={open}>
       <MenuBtn onClick={() => setOpen(!open)} ><IoMdMenu /></MenuBtn>
-      <NavVertical display={open} theme={theme === 'light' ? lightTheme : darkTheme}>
+      <NavVertical display={open} >
         <ButtonX onClick={() => setOpen(false)}>X</ButtonX>
         <li><Link offset='140' href='#about' onClick={() => setOpen(false)}>About</Link></li>
         <li><Link offset='140' href='#projects' onClick={() => setOpen(false)}>Projects</Link></li>

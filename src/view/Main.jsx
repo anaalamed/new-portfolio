@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { lightTheme, darkTheme } from '../styles/theme';
-
 import About from './About';
 import Projects from './Projects';
 
-
-const Main = ({ theme }) => {
+const Main = () => {
     const [repos, setRepos] = useState([]);
 
     const fetchRepos = async () => {
+        // repos from github API
         const res = await fetch("https://api.github.com/users/anaalamed/repos");
         const repos = await res.json();
 
+        // adds from firebase storage JSON 
         const res2 = await fetch("https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projects_adds.txt?alt=media&token=b244ec62-5b53-4471-ae3b-db544478eb65")
         const projects_adds = await res2.json();
 
@@ -21,7 +20,6 @@ const Main = ({ theme }) => {
             let adds = projects_adds.find(project => repo.id === project.id);
             return { ...adds, ...repo };
         })
-
         setRepos(merged_arr);
     }
 
@@ -33,9 +31,9 @@ const Main = ({ theme }) => {
     }, [])
 
     return (
-        <Box theme={theme === 'light' ? lightTheme : darkTheme}>
+        <Box >
             <About avatar={repos[0]?.owner.avatar_url}></About>
-            <Projects theme={theme} repos={repos}></Projects>
+            <Projects repos={repos}></Projects>
         </Box>
     );
 };

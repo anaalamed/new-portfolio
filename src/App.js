@@ -16,10 +16,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-          <TopBar theme={theme} setTheme={toggleTheme}></TopBar>
-          <Hero theme={theme}></Hero>
-          <Main theme={theme}></Main>
-          <Contact theme={theme}></Contact>
+          <TopBar setTheme={toggleTheme}></TopBar>
+          <Hero ></Hero>
+          <Main ></Main>
+          <Contact ></Contact>
 
       <GlobalStyles></GlobalStyles>
     </ThemeProvider>

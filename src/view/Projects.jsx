@@ -7,7 +7,7 @@ import Project from './Project';
 import { Title } from '../styles/global';
 
 
-const Projects = ({ theme, repos }) => {
+const Projects = ({ repos }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(6);
 
@@ -32,7 +32,7 @@ const Projects = ({ theme, repos }) => {
             <Title>Projects</Title>
             <Collection>
                 {currentRepos?.map(repo =>
-                    (<Project theme={theme} repo={repo} key={repo.id} ></Project>)
+                    (<Project repo={repo} key={repo.id} ></Project>)
                 )}
             </Collection>
             <Pagination current={currentPage} onChange={handleChangePage} total={30} />
