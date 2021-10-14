@@ -8,7 +8,7 @@ import Toggle from './Toogle';
 const VerticalNav = ({ setTheme, open, setOpen }) => {
 
   return (
-    <RightNav display={open}>
+    <RightNav >
       <MenuBtn onClick={() => setOpen(!open)} ><IoMdMenu /></MenuBtn>
       <NavVertical display={open} >
         <ButtonX onClick={() => setOpen(false)}>X</ButtonX>

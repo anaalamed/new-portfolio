@@ -53,8 +53,12 @@ const Skica = styled.div`
 `;
 
 const Image = styled.div`
-position: relative;
-top: -12rem;
+  position: relative;
+  top: -15rem;
+
+  @media only screen and (max-width: 812px) {
+    top: -13rem;
+  }
 
   img {
     width: 60rem;

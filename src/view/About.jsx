@@ -2,9 +2,33 @@ import React from "react";
 import styled, { ThemeConsumer } from "styled-components";
 
 import { Title } from '../styles/global';
-// import WordCloud from './WordCloud'
+
 
 const About = ({ avatar }) => {
+
+  const skillsFrontend = [
+    { logo: "HTML5", color: "E34F26" },
+    { logo: "CSS3", color: "1572B6" },
+    { logo: "Sass", color: "CC6699" },
+    { logo: "JavaScript", color: "F7DF1E" },
+    { logo: "jQuery", color: "2331eb" },
+    { logo: "React", color: "61DAFB" },
+    { logo: "Redux", color: "764ABC" },
+    { logo: "styled-components", color: "DB7093", name: "styled--components" }]
+
+  const skillsBackend = [
+    { logo: "Node.js", color: "" },
+    { logo: "Express", color: "FFFFFF" },
+    { logo: "TypeScript", color: "3178C6" },
+    { logo: "MongoDB", color: "47A248" }]
+
+  const skillsTools = [
+    { logo: "Firebase", color: "FFCA28" },
+    { logo: "Heroku", color: "6432a8" },
+    { logo: "Git", color: "F05032" },
+    { logo: "visual studio code", color: "007ACC", name: "VS Code" },
+    { logo: "Postman", color: "e35b17" },
+    { logo: "Gatsby", color: "6115a3" }]
 
   return (
     <ThemeConsumer>
@@ -16,7 +40,6 @@ const About = ({ avatar }) => {
             <Image><img src={avatar} alt='' /></Image>
 
             <Details>
-
               <p>I have completed my bachelor's degree in Electrical and Electronics Engineering, but my passion is coding! <br></br>
                 I'm a graduate of Full Stack Development course searching for my first opportunity as a developer. <br></br>
                 I’m coding for at least 3 hours every day. <br></br>
@@ -25,34 +48,15 @@ const About = ({ avatar }) => {
                 Skills:
               </p>
 
-
               <Icons>
-                <img src={`https://img.shields.io/badge/HTML5-${theme.topBar.substring(1)}?logo=html5&logoColor=E34F26`} alt="HTML5 logo" title="HTML5" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/CSS3-${theme.topBar.substring(1)}?logo=css3&logoColor=1572B6`} alt="CSS3 logo" title="CSS3" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/Sass-${theme.topBar.substring(1)}?logo=sass&logoColor=CC6699`} alt="Sass logo" title="Sass" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/JavaScript-${theme.topBar.substring(1)}?logo=javascript&logoColor=F7DF1E`} alt="JavaScript logo" title="JavaScript" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/jQuery-${theme.topBar.substring(1)}?logo=jquery&logoColor=2331eb`} alt="jquery logo" title="jquery" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/-React-%23${theme.topBar.substring(1)}?logo=react&logoColor=61DAFB%22%20alt=%22React%20Native%20logo`} alt="React logo" title="React" height="30" />&nbsp;
-          <img src={`https://img.shields.io/badge/Redux-${theme.topBar.substring(1)}?logo=redux&logoColor=764ABC`} alt="Redux logo" title="Redux" height="30" />&nbsp;
-          <img src={`https://img.shields.io/static/v1?label=&message=styled-components&color=${theme.topBar.substring(1)}&logo=styled-components&logoColor=DB7093`} alt="styled-components logo" title="styled-components" height="30" />&nbsp;<br></br>
-                <img src={`https://img.shields.io/badge/Node.js-${theme.topBar.substring(1)}?logo=node.js&logoColor=339933`} alt="Node.js logo" title="Node.js" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/Express-${theme.topBar.substring(1)}?logo=express&logoColor=FFFFFF`} alt="Express.js logo" title="Express.js" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/TypeScript-${theme.topBar.substring(1)}?logo=typescript&logoColor=3178C6`} alt="TypeScript logo" title="TypeScript" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/MongoDB-${theme.topBar.substring(1)}?logo=mongodb&logoColor=47A248`} alt="MongoDB logo" title="MongoDB" height="30" />&nbsp; <br></br>
-                <img src={`https://img.shields.io/badge/Firebase-${theme.topBar.substring(1)}?logo=firebase&logoColor=FFCA28`} alt="Firebase logo" title="Firebase" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/Heroku-${theme.topBar.substring(1)}?logo=heroku&logoColor=6432a8`} alt="Heroku logo" title="Heroku" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/git-${theme.topBar.substring(1)}?logo=git&logoColor=F05032`} alt="git logo" title="git" height="30" />&nbsp;
-          <img src={`https://img.shields.io/badge/VS%20Code-${theme.topBar.substring(1)}?logo=visual-studio-code&logoColor=007ACC`} alt="Visual Studio Code logo" title="Visual Studio Code" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/Postman-${theme.topBar.substring(1)}?logo=postman&logoColor=e35b17`} alt="Postman logo" title="Postman" height="30" /> &nbsp;
-          <img src={`https://img.shields.io/badge/Gatsby-${theme.topBar.substring(1)}?logo=gatsby&logoColor=6115a3`} alt="Gatsby logo" title="Gatsby" height="30" /> &nbsp;
-
-            </Icons>
+                {skillsFrontend.map(badge => (<img src={`https://img.shields.io/badge/${badge.name || badge.logo}-${theme.topBar.substring(1)}?logo=${badge.logo}&logoColor=${badge.color}`} alt={badge.logo} title={badge.logo} height="30"></img>))} <br></br>
+                {skillsBackend.map(badge => (<img src={`https://img.shields.io/badge/${badge.logo}-${theme.topBar.substring(1)}?logo=${badge.logo}&logoColor=${badge.color}`} alt={badge.logo} title={badge.logo} height="30"></img>))} <br></br>
+                {skillsTools.map(badge => (<img src={`https://img.shields.io/badge/${badge.name || badge.logo}-${theme.topBar.substring(1)}?logo=${badge.logo}&logoColor=${badge.color}`} alt={badge.logo} title={badge.logo} height="30"></img>))} <br></br>
+              </Icons>
             </Details>
           </Content>
         </Box >
       }
-
-      {/* <WordCloud></WordCloud> */}
     </ThemeConsumer>
   );
 };
@@ -108,7 +112,7 @@ const Image = styled.div`
 
 const Details = styled.div`
     img {
-      margin-bottom: 5px;
+      margin: 5px;
     }
 `;
 

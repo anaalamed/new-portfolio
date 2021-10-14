@@ -36,9 +36,11 @@ const Box = styled.div`
   align-items: center;
   padding: 1rem;
   border-radius: 1rem;
+  min-height: 25rem;
 
   p {
     text-align: center;
+    font-size: 1rem;
   }
 
   @media only screen and (max-width: 812px) {
