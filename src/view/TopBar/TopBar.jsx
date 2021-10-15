@@ -72,7 +72,7 @@ const Link = styled(AnchorLink)`
   color: white;
   text-decoration: none;
   font-size: 1.7rem;
-  font-weight: bold;
+  font-weight: 500;
 
   :hover {
     color: ${props => props.theme.body}

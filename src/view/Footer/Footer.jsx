@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Title } from '../styles/global';
-import Icons from './Icons';
+import { Title } from '../../styles/global';
+import Icons from '../Icons';
 
 const Contact = () => {
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { ThemeConsumer } from "styled-components";
 
-import { Title } from '../styles/global';
+import { Title } from '../../../styles/global';
 
 
 const About = ({ avatar }) => {

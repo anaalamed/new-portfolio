@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import About from './About';
-import Projects from './Projects';
+import About from './About/About';
+import Projects from './Projects/Projects';
+
+
+// import Projects from './Projects/Projects';
 
 const Main = () => {
     const [repos, setRepos] = useState([]);

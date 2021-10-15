@@ -4,8 +4,8 @@ import { Pagination } from 'antd';
 import 'antd/dist/antd.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import Project from './Project';
-import { Title } from '../styles/global';
+import Project from './ProjectCard';
+import { Title } from '../../../styles/global';
 
 const Projects = ({ repos }) => {
     const [currentPage, setCurrentPage] = useState(1);

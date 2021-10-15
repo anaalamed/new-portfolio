@@ -38,6 +38,10 @@ const MenuBtn = styled.button`
   border: none;
   font-size: 2rem;
 
+  :hover {
+    color: ${props => props.theme.body}
+  }
+
   @media only screen and (max-width: 812px) {
     display: block;
   }
@@ -64,6 +68,10 @@ const Link = styled(AnchorLink)`
   text-decoration: none;
   font-size: 1.8rem;
 
+  :hover {
+    color: ${props => props.theme.body}
+  }
+
   @media only screen and (max-width: 812px) {
     font-size: 1.3rem;
   }
@@ -78,6 +86,11 @@ const ButtonX = styled.button`
   color: red;
   border: none;
   font-weight: bold;
+
+  :hover {
+    font-size: 1.5rem;
+    transition: 1s;
+  }
 
   @media only screen and (max-width: 812px) {
     display: block;
