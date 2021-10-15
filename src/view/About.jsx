@@ -14,13 +14,15 @@ const About = ({ avatar }) => {
     { logo: "jQuery", color: "2331eb" },
     { logo: "React", color: "61DAFB" },
     { logo: "Redux", color: "764ABC" },
-    { logo: "styled-components", color: "DB7093", name: "styled--components" }]
+    { logo: "styled-components", color: "DB7093", name: "styled--components" }
+  ]
 
   const skillsBackend = [
     { logo: "Node.js", color: "" },
     { logo: "Express", color: "FFFFFF" },
     { logo: "TypeScript", color: "3178C6" },
-    { logo: "MongoDB", color: "47A248" }]
+    { logo: "MongoDB", color: "47A248" }
+  ]
 
   const skillsTools = [
     { logo: "Firebase", color: "FFCA28" },
@@ -28,7 +30,8 @@ const About = ({ avatar }) => {
     { logo: "Git", color: "F05032" },
     { logo: "visual studio code", color: "007ACC", name: "VS Code" },
     { logo: "Postman", color: "e35b17" },
-    { logo: "Gatsby", color: "6115a3" }]
+    { logo: "Gatsby", color: "6115a3" }
+  ]
 
   return (
     <ThemeConsumer>

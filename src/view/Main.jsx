@@ -12,7 +12,7 @@ const Main = () => {
         const res = await fetch("https://api.github.com/users/anaalamed/repos");
         const repos = await res.json();
 
-        // adds from firebase storage JSON 
+        // adds from firebase storage JSON (image + order)
         const res2 = await fetch("https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projects_adds.txt?alt=media&token=b244ec62-5b53-4471-ae3b-db544478eb65")
         const projects_adds = await res2.json();
 
