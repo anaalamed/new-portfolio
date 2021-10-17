@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 import About from './About/About';
 import Projects from './Projects/Projects';
-
-
-// import Projects from './Projects/Projects';
+import projects_adds from '../../data/projectsAdds.json'; // order + image
 
 const Main = () => {
     const [repos, setRepos] = useState([]);
@@ -15,10 +13,7 @@ const Main = () => {
         const res = await fetch("https://api.github.com/users/anaalamed/repos");
         const repos = await res.json();
 
-        // adds from firebase storage JSON (image + order)
-        const res2 = await fetch("https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projects_adds.txt?alt=media&token=b244ec62-5b53-4471-ae3b-db544478eb65")
-        const projects_adds = await res2.json();
-
+        // merge repos with adds from json
         var merged_arr = repos.map(repo => {
             let adds = projects_adds.find(project => repo.id === project.id);
             return { ...adds, ...repo };

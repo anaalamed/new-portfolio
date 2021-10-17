@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import dayjs from 'dayjs';
+import ReactTooltip from 'react-tooltip';
 import { GrGithub } from 'react-icons/gr';
 import { CgWebsite } from 'react-icons/cg';
 
@@ -14,12 +15,17 @@ const Project = ({ repo }) => {
       <p>{repo.description}</p>
       <p>last updated: {dayjs(repo.updated_at).format('DD-MM-YY')}</p>
       <Buttons>
-        <Button ><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button>
+        <Button ><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub data-tip data-for="github" /></a></Button>
         {(repo.homepage) ? (
-          <Button ><a href={repo.homepage} target="_blank" rel="noreferrer"><CgWebsite /></a></Button>
+          <Button ><a href={repo.homepage} target="_blank" rel="noreferrer"><CgWebsite data-tip data-for="website" /></a></Button>
         ) : null}
-
       </Buttons>
+
+      <ReactTooltip id="github" place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>GitHub</ReactTooltip>
+      <ReactTooltip id="website" place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>Website</ReactTooltip>
+
+
+
     </Box>
   );
 };
@@ -53,8 +59,8 @@ const Image = styled.div`
   img {
       border-radius: 10rem;
       width: 14rem;
-      /* height: 9rem; */
-      object-fit: contain;
+      height: 8rem;
+      /* object-fit: contain; */
       margin-bottom: 0.5rem;
   }
 `;
@@ -67,13 +73,15 @@ const Buttons = styled.div`
 
 const Button = styled.button`
   background: ${props => props.theme.button};
-  padding: 0.2rem 3rem 0 3rem;
+  padding: 0.3rem 3rem 0 3rem;
   border-radius: 1rem;
+  cursor: pointer;
 
   a {
     color: white;
     font-size: 1.5rem;
-    vertical-align: middle;
+    /* vertical-align: middle; */
+    margin-top: 1rem;
   }
 
   @media only screen and (max-width: 812px) {
@@ -82,7 +90,6 @@ const Button = styled.button`
     a {
     font-size: 1rem;
     }
-    
-
+  
   }
 `;
